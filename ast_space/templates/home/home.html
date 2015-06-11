@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% import "_forms.html" as forms %}
+
+
+{% block content %}
+
+<h1>Add a Talk</h1>
+    <form action="" method="post" name="new talk">
+        {{ forms.render(form) }}
+        <p><input type="submit" value="submit"></p>
+    </form>
+
+<h1>Coming Talks</h1>
+
+    {% for talk in talks %}
+        <h2>{{ talk.title }}</h2>
+        {% if talk.body %}
+            <p>{{ talk.body|truncate(200) }}</p>
+        {% endif %}
+
+        <p>
+            {{ talk.created_at.strftime('%H:%M %Y-%m-%d') }}
+        </p>
+    {% endfor %}
+
+{% endblock %}
