@@ -15,3 +15,5 @@ db = MongoEngine(app)
 from ast_space.views.home import home
 app.register_blueprint(home)
 
+
+from .util import assets
