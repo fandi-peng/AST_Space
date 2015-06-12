@@ -11,7 +11,10 @@ home = Blueprint('home', __name__)
 @home.route('/', methods=['GET', 'POST'])
 def new_talk():
     talks = Talk.objects.order_by('-created_at')
-    talk_form = model_form(Talk, exclude=('created_at',))(request.form)
+    talk_form = model_form(Talk, field_args = {'title': {'label':'标题 Title'},
+                                               'author': {'label':'称呼 How to Call You'},
+                                               'body': {'label':'话题简介 Talk Brief'}},
+                           exclude=('created_at',))(request.form)
     if request.method == 'POST' and talk_form.validate():
         talk = Talk()
         talk_form.populate_obj(talk)

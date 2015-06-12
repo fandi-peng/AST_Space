@@ -8,12 +8,12 @@ bundles = {
     'base_css': Bundle(
         'css/lib/foundation.css',
         'css/lib/normalize.css',
-        'css/home.css',
+        'css/app.css',
         filters='cssmin',
         output='gen/base.css'),
 
     'base_js': Bundle(
-        'js/home.js',
+        'js/app.js',
         'js/lib/vendor/modernizr.js',
         filters='jsmin',
         output='gen/base.js',
