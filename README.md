@@ -15,5 +15,5 @@ $ python3 -m venv .env
 
 $ source ./env/bin/activate
 
-$ pip install -r AST_Space/requirments.txt
+(.env) $ pip install -r AST_Space/requirments.txt
 ```
