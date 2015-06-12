@@ -20,6 +20,9 @@
 
   {% block content %}{% endblock %}
 
+  {% assets "bottom_js" %}
+      <link rel="stylesheet" href="{{ ASSET_URL }}" />
+  {% endassets %}
   <script>
     $(document).foundation();
   </script>
